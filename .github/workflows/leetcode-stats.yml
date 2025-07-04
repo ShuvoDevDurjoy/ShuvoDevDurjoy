@@ -1,0 +1,15 @@
+name: Update LeetCode Stats with Difficulty
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # every 6 hours
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: JakeSteam/leetcode-stats-card@master
+        with:
+          username: shuvodev1    # your LeetCode username
+          github_token: ${{ secrets.GITHUB_TOKEN }}
